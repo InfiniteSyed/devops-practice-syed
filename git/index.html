@@ -79,4 +79,112 @@ this is the test stash content
             display: flex;
             padding: 30px;
             gap: 20px; /* Space between cards */
-            flex-wrap
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+            justify-content: space-around;
+        }
+
+        .card {
+            flex: 1; /* Allows cards to take equal space */
+            min-width: 250px;
+            padding: 20px;
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 15px 25px var(--shadow);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* Call to Action Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #7a70ff;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .features {
+                flex-direction: column; /* Stack cards vertically on mobile */
+                gap: 15px;
+            }
+            .card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="hero">
+            <h1>Project Phoenix: Ready to Launch</h1>
+            <p>A beautifully designed, modern, and fully responsive test page template.</p>
+            <a href="#" class="cta-button">Get Started Today →</a>
+        </header>
+
+        <section class="features">
+            
+            <div class="card">
+                <h3>Clean Code</h3>
+                <p>Built with semantic HTML5 and a concise CSS structure for easy maintenance.</p>
+            </div>
+
+            <div class="card">
+                <h3>Responsive Design</h3>
+                <p>Looks great on any screen size, from mobile phones to large desktop monitors.</p>
+            </div>
+
+            <div class="card">
+                <h3>Modern Aesthetic</h3>
+                <p>Uses a vibrant color palette, Google Fonts, and subtle shadows for depth.</p>
+            </div>
+
+        </section>
+
+        <main style="padding: 30px; text-align: center;">
+            <h2>The Core of Your Test Site</h2>
+            <p style="margin-top: 15px;">This section is where your main content or application demo would live. The layout is flexible, allowing you to easily add more blocks like forms, images, or detailed text without breaking the design.</p>
+            <p style="margin-top: 10px;">Feel free to modify the `--primary-color` in the CSS for a completely different look!</p>
+        </main>
+
+        <footer class="footer">
+            &copy; 2025 Modern Test Page | Designed with HTML & CSS
+        </footer>
+
+    </div>
+
+</body>
+</html>

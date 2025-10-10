@@ -1,0 +1,37 @@
+﻿DOCKER:
+
+
+* docker ps – list running containers
+* docker ps -a – list all containers, including stopped
+* docker start <container> – start a stopped container
+* docker stop <container> – stop a running container
+* docker rm <container> – remove a container
+* docker rm $(docker ps -aq) – remove all containers
+* docker container prune – remove all stopped containers
+* docker images – list all images
+* docker rmi <image> – remove an image
+* docker build -t myapp:v1 . – build image from Dockerfile in current directory
+* docker history <image> – show image layers and build history
+* docker run -d -p 8080:80 nginx – run container detached, map host port 8080 → container 80
+* docker run -it --rm ubuntu bash – run interactive container, remove after exit
+* docker run -d --name mymysql -e MYSQL_ROOT_PASSWORD=rootpass -e MYSQL_DATABASE=mydb -v mydata:/var/lib/mysql mysql:5.7 – run MySQL container with env variables and persistent volume
+* docker run -d --name mynginx -p 8080:80 -v $(pwd)/index.html:/usr/share/nginx/html/index.html nginx – run Nginx container mounting host HTML file
+* docker volume create mydata – create named volume
+* docker volume ls – list all volumes
+* docker volume inspect mydata – show volume details, path inside Docker storage
+* docker volume rm <volume> – remove volume
+* docker run -d -v mydata:/data alpine sh -c "echo Hello > /data/hello.txt" – attach volume to container and write file
+* docker run --rm -v mydata:/data alpine cat /data/hello.txt – read data from volume
+* docker network create mynetwork – create custom network
+* docker network ls – list networks
+* docker network inspect mynetwork – show containers attached and IPs
+* docker network connect mynetwork <container> – attach container to network
+* docker network disconnect mynetwork <container> – detach container from network
+* docker exec -it <container> bash – enter running container interactively
+* docker exec -it <mysql-container> mysql -uroot -prootpass – connect to MySQL inside container
+* docker compose up -d – start all services defined in docker-compose.yml detached
+* docker compose logs – view logs of all services
+* docker compose down – stop all services
+* docker compose down -v – stop and remove services and volumes
+* docker run -it --rm --network mynetwork mysql:5.7 mysql -hmymysql -uroot -prootpass -e "SHOW DATABASES;" – test MySQL connectivity from any container in same network
+* ping <container_name> – test network-level connectivity (may need to install ping in minimal images)

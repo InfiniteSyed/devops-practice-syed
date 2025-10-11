@@ -35,3 +35,7 @@
 * docker compose down -v – stop and remove services and volumes
 * docker run -it --rm --network mynetwork mysql:5.7 mysql -hmymysql -uroot -prootpass -e "SHOW DATABASES;" – test MySQL connectivity from any container in same network
 * ping <container_name> – test network-level connectivity (may need to install ping in minimal images)
+
+
+* Path for mysql - /var/lib/mysql/data
+* path for nginx - /usr/share/nginx/html/
